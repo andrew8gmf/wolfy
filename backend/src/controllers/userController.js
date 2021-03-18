@@ -77,6 +77,10 @@ module.exports = {
             return response.status(400).send({ error: 'Token invalid' });
         }
 
+        if(user.isVerified) {
+            return response.send({ message: 'Email already verified!' });
+        }
+
         return response.send({ message: 'Email verified!' });
     },
 
