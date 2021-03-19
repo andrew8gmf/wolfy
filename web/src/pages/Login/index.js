@@ -6,7 +6,7 @@ import { login } from "../../services/auth";
 
 import { Form, Container } from "./styles";
 
-class SignIn extends Component {
+class Login extends Component {
   state = {
     email: "",
     password: "",
@@ -56,4 +56,4 @@ class SignIn extends Component {
   }
 }
 
-export default withRouter(SignIn);
+export default withRouter(Login);
