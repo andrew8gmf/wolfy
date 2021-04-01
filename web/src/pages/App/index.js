@@ -1,14 +1,19 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { StyledContainer, StyledRow, Left, Center, Right} from "./styles";
 
+import { withRouter } from "react-router-dom";
 import { getUser } from "../../services/auth";
 
 class App extends Component {
   render() {
     return (
-      <>
-        {getUser().email}
-      </>
+      <StyledContainer fluid>
+        <StyledRow>
+          <Left>Options</Left>
+          <Center xs={8}>Rooms / User logged: {getUser().username}</Center>
+          <Right>Friends list</Right>
+        </StyledRow>
+      </StyledContainer>
     );
   }
 }
