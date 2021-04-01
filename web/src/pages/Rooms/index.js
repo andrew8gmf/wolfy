@@ -4,7 +4,7 @@ import { StyledContainer, StyledRow, Left, Center, Right} from "./styles";
 import { withRouter } from "react-router-dom";
 import { getUser } from "../../services/auth";
 
-class App extends Component {
+class Rooms extends Component {
   render() {
     return (
       <StyledContainer fluid>
@@ -18,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default withRouter(Rooms);
