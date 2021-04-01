@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const Friends = require('./friends');
 
 const UserSchema = new mongoose.Schema({
   email: {
@@ -38,11 +39,8 @@ const UserSchema = new mongoose.Schema({
     select: false,
     default: false,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "Friends" }]
+}, {timestamps: true});
 
 UserSchema.pre('save', async function(next) {
   const hash = await bcrypt.hash(this.password, 10); 
